@@ -8,9 +8,11 @@
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *tmp = *list, *tmp_back = NULL;
+	listint_t *tmp = NULL, *tmp_back = NULL;
 
 	if (list && *list)
+	{
+		tmp = *list;
 		while (tmp->next)
 		{
 			if (tmp->next->n < tmp->n)
@@ -27,6 +29,7 @@ void insertion_sort_list(listint_t **list)
 			else
 				tmp = tmp->next;
 		}
+	}
 }
 
 /**
